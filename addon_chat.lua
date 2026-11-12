@@ -14,3 +14,13 @@ SL_Sniffer:SetScript("OnEvent", function (self, event, prefix, message, chanel, 
         print(message)
     end
 end)
+
+
+SL_Sniffer = CreateFrame("Frame")
+SL_Sniffer:RegisterEvent("CHAT_MSG_ADDON")
+SL_Sniffer:SetScript("OnEvent", function (self, event, prefix, message, chanel, sender)
+    if prefix == "my_RAY_vers" then --слушаю префикс РЭЙ на версии
+        print(message, sender)
+    end
+end)
+

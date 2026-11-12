@@ -40,8 +40,8 @@ end
 --макрос на добавление мата
 --/run SendAddonMessage("нс_мат", "мат", "guild")
 
---макрос на отключение котиков
---
+--макрос на прослушку версий РЭЙ
+--/run SendAddonMessage("RAY_vers", "", "guild")
 
 
 
@@ -65,13 +65,13 @@ end
 
 
 --Функция отключения котиков
---[[function netkotov(self, event, text, sender)
+function netkotov(self, event, text, sender)
     local lowerMsg = strlower(text)
-    if string.find(lowerMsg, "котика") then
+    if string.find(lowerMsg, "котэ") then
         return true
     end
 end
-ChatFrame_AddMessageEventFilter("CHAT_MSG_OFFICER", netkotov)--]]
+ChatFrame_AddMessageEventFilter("CHAT_MSG_OFFICER", netkotov)
 
 --функция поиска по системному чату
 function searchSystl(text, count)
